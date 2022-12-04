@@ -1,5 +1,8 @@
-package org.message_receiver;public class Main {
+package org.message_receiver;
+
+import org.message_receiver.view.MainFrame;
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        java.awt.EventQueue.invokeLater(MainFrame::new);
     }
 }
