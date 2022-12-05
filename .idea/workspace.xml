@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add GridBagLayout">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/IFormListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/Toolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/Toolbar.java" afterDir="false" />
     </list>
@@ -18,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -35,6 +37,9 @@
         <option name="workspaceImportEnabled" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2IRgyy3qUonPQ9TFNfzWlHEC6vv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -75,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670240685047</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add GridBagLayout">
+      <created>1670243594457</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670243594457</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

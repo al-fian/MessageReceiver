@@ -27,7 +27,7 @@ public class Toolbar extends JPanel implements ActionListener {
         _goodbyeButton.addActionListener(this);
     }
 
-    public void setTextPanel(IStringListener listener) {
+    public void setStringListener(IStringListener listener) {
         _listener = listener;
 
     }
