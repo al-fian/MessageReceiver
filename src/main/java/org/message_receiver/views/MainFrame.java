@@ -7,7 +7,7 @@ public class MainFrame extends JFrame {
 
     private final Toolbar _toolbar;
     private final TextPanel _textPanel;
-    private final JButton _button;
+    private final FormPanel _formPanel;
 
     public MainFrame()
     {
@@ -21,10 +21,11 @@ public class MainFrame extends JFrame {
 
         _toolbar = new Toolbar();
         _textPanel = new TextPanel();
-        _button = new JButton("Click Me!");
+        _formPanel = new FormPanel();
 
         add(_toolbar, BorderLayout.PAGE_START);
         add(_textPanel, BorderLayout.CENTER);
+        add(_formPanel, BorderLayout.LINE_START);
 
         _toolbar.setTextPanel(_textPanel::appendText);
     }
