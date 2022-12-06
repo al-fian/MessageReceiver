@@ -28,8 +28,9 @@ public class MainFrame extends JFrame {
         _formPanel.setFormListener(e -> {
             String name = e.getName();
             String job = e.getJob();
+            int ageCategory = e.getAgeCategory();
 
-            _textPanel.appendText(name + ": " + job + "\n");
+            _textPanel.appendText(name + ": " + job + ": " + ageCategory + "\n");
         });
     }
 }

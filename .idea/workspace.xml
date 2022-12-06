@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add GridBagLayout">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/IFormListener.java" afterDir="false" />
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add EventObject">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/Toolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/Toolbar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,14 +85,22 @@
       <option name="project" value="LOCAL" />
       <updated>1670243594457</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add EventObject">
+      <created>1670249433382</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1670249433382</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add initial files and packages" />
     <MESSAGE value="add Toolbar and TextPanel" />
     <MESSAGE value="add GridBagLayout" />
-    <option name="LAST_COMMIT_MESSAGE" value="add GridBagLayout" />
+    <MESSAGE value="add EventObject" />
+    <option name="LAST_COMMIT_MESSAGE" value="add EventObject" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

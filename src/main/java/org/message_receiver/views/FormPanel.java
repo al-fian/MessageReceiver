@@ -5,10 +5,6 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 public class FormPanel extends JPanel {
-
-    private final JTextField _nameField;
-    private final JTextField _jobField;
-
     private IFormListener _formListener;
 
     public FormPanel() {
@@ -23,15 +19,30 @@ public class FormPanel extends JPanel {
 
         JLabel _nameLabel = new JLabel("Name: ");
         JLabel _jobLabel = new JLabel("Job: ");
-        _nameField = new JTextField(12);
-        _jobField = new JTextField(12);
+        JTextField _nameField = new JTextField(12);
+        JTextField _jobField = new JTextField(12);
+        JList<AgeCategory> _ageList = new JList<>();
+
+        DefaultListModel<AgeCategory> _ageModel = new DefaultListModel<>();
+        _ageModel.addElement(new AgeCategory(0, "Under 18"));
+        _ageModel.addElement(new AgeCategory(1,"18 to 65"));
+        _ageModel.addElement(new AgeCategory(2,"65 or over"));
+        _ageList.setModel(_ageModel);
+
+        _ageList.setPreferredSize(new Dimension(110,66));
+        _ageList.setBorder(BorderFactory.createEtchedBorder());
+        _ageList.setSelectedIndex(1);
+
 
         JButton _okButton = new JButton("OK");
         _okButton.addActionListener(e -> {
             String name = _nameField.getText();
             String job = _jobField.getText();
+            AgeCategory ageCategory = (AgeCategory) _ageList.getSelectedValue();
 
-            FormEvent fe = new FormEvent(this, name, job);
+            System.out.println(ageCategory.getIndex());
+
+            FormEvent fe = new FormEvent(this, name, job, ageCategory.getIndex());
 
             if (_formListener != null) {
                 _formListener.formEventOccurred(fe);
@@ -75,14 +86,41 @@ public class FormPanel extends JPanel {
 
         // 3rd row
         gc.weightx = 1;
-        gc.weighty = 2.0;
+        gc.weighty = 0.1;
         gc.gridx = 1;
         gc.gridy = 2;
+        gc.anchor = GridBagConstraints.FIRST_LINE_START;
+        add(_ageList, gc);
+
+        // 4th row
+        gc.weightx = 1;
+        gc.weighty = 2.0;
+        gc.gridx = 1;
+        gc.gridy = 3;
         gc.anchor = GridBagConstraints.FIRST_LINE_START;
         add(_okButton, gc);
     }
 
     public void setFormListener(IFormListener formListener) {
         _formListener = formListener;
+    }
+}
+
+class AgeCategory {
+
+    private final int _index;
+    private final String _text;
+    public AgeCategory(int index, String text) {
+        _index = index;
+        _text = text;
+    }
+
+    public int getIndex() {
+        return _index;
+    }
+
+    @Override
+    public String toString() {
+        return _text;
     }
 }
