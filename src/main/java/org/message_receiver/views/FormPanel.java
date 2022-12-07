@@ -3,8 +3,26 @@ package org.message_receiver.views;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class FormPanel extends JPanel {
+
+    private final JLabel _nameLabel;
+    private final JLabel _jobLabel;
+    private final JLabel _ageLabel;
+    private final JLabel _employmentLabel;
+    private final JTextField _nameField;
+    private final JTextField _jobField;
+    private final JList<AgeCategory> _ageList;
+    private final JComboBox<String> _employmentCombo;
+    private final JCheckBox _citizenCheckBox;
+    private final JTextField _taxField;
+    private final JLabel _taxLabel;
+    private final JRadioButton _maleRadio;
+    private final JRadioButton _femaleRadio;
+    private final ButtonGroup _genderGroup;
+    private final JButton _okButton;
+
     private IFormListener _formListener;
 
     public FormPanel() {
@@ -17,12 +35,50 @@ public class FormPanel extends JPanel {
         Border outerBorder = BorderFactory.createEmptyBorder(5,5,5,5);
         setBorder(BorderFactory.createCompoundBorder(outerBorder, innerBorder));
 
-        JLabel _nameLabel = new JLabel("Name: ");
-        JLabel _jobLabel = new JLabel("Job: ");
-        JTextField _nameField = new JTextField(12);
-        JTextField _jobField = new JTextField(12);
-        JList<AgeCategory> _ageList = new JList<>();
+        _nameLabel = new JLabel("Name: ");
+        _jobLabel = new JLabel("Job: ");
+        _ageLabel = new JLabel("Age: ");
+        _employmentLabel = new JLabel("Employment: ");
+        _nameField = new JTextField(10);
+        _jobField = new JTextField(10);
+        _ageList = new JList<>();
+        _employmentCombo = new JComboBox<>();
+        _citizenCheckBox = new JCheckBox();
+        _taxField = new JTextField(10);
+        _taxLabel = new JLabel("Tax ID: ");
+        _maleRadio = new JRadioButton("Male");
+        _femaleRadio = new JRadioButton("Female");
+        _genderGroup = new ButtonGroup();
+        _okButton = new JButton("OK");
 
+        // set mnemonic on ok button
+        _okButton.setMnemonic(KeyEvent.VK_O);
+
+        _nameLabel.setDisplayedMnemonic(KeyEvent.VK_N);
+        _nameLabel.setLabelFor(_nameField);
+
+        // set up gender radios
+        _genderGroup.add(_maleRadio);
+        _genderGroup.add(_femaleRadio);
+
+        // default
+        _maleRadio.setSelected(true);
+
+        // why? to pass a string to ok button as one command
+        _maleRadio.setActionCommand("male");
+        _femaleRadio.setActionCommand("female");
+
+        // set up tax ID
+        _taxField.setEnabled(false);
+        _taxLabel.setEnabled(false);
+
+        _citizenCheckBox.addActionListener(e -> {
+            boolean isTicked = _citizenCheckBox.isSelected();
+            _taxField.setEnabled(isTicked);
+            _taxLabel.setEnabled(isTicked);
+        });
+
+        // set up list
         DefaultListModel<AgeCategory> _ageModel = new DefaultListModel<>();
         _ageModel.addElement(new AgeCategory(0, "Under 18"));
         _ageModel.addElement(new AgeCategory(1,"18 to 65"));
@@ -33,31 +89,47 @@ public class FormPanel extends JPanel {
         _ageList.setBorder(BorderFactory.createEtchedBorder());
         _ageList.setSelectedIndex(1);
 
+        // set up combo box
+        DefaultComboBoxModel<String> _employmentComboModel = new DefaultComboBoxModel<>();
+        _employmentComboModel.addElement("employed");
+        _employmentComboModel.addElement("self-employed");
+        _employmentComboModel.addElement("unemployed");
+        _employmentCombo.setModel(_employmentComboModel);
+        _employmentCombo.setSelectedIndex(0);
 
-        JButton _okButton = new JButton("OK");
         _okButton.addActionListener(e -> {
             String name = _nameField.getText();
             String job = _jobField.getText();
-            AgeCategory ageCategory = (AgeCategory) _ageList.getSelectedValue();
+            AgeCategory ageCategory = _ageList.getSelectedValue();
+            String employmentStatus = (String)_employmentCombo.getSelectedItem();
+            boolean isUsCitizen = _citizenCheckBox.isSelected();
+            String taxID = _taxField.getText();
 
-            System.out.println(ageCategory.getIndex());
+            String gender = _genderGroup.getSelection().getActionCommand();
 
-            FormEvent fe = new FormEvent(this, name, job, ageCategory.getIndex());
+            FormEvent fe = new FormEvent(this, name, job, ageCategory.getIndex(),
+                    employmentStatus, isUsCitizen, taxID, gender);
 
             if (_formListener != null) {
                 _formListener.formEventOccurred(fe);
             }
         });
 
+        layoutComponents();
+
+    }
+
+    private void layoutComponents() {
         setLayout(new GridBagLayout());
 
         GridBagConstraints gc = new GridBagConstraints();
 
         // 1st row
+        gc.gridy = 0;
+
         gc.weightx = 1;
         gc.weighty = 0.1;
         gc.gridx = 0;
-        gc.gridy = 0;
         gc.fill = GridBagConstraints.NONE;
         gc.anchor = GridBagConstraints.LINE_END;
         gc.insets = new Insets(0,0,0,5);
@@ -70,33 +142,112 @@ public class FormPanel extends JPanel {
         add(_nameField, gc);
 
         // 2nd row
+        gc.gridy++;
+
         gc.weightx = 1;
         gc.weighty = 0.1;
+
         gc.gridx = 0;
-        gc.gridy = 1;
         gc.anchor = GridBagConstraints.LINE_END;
         gc.insets = new Insets(0,0,0,5);
         add(_jobLabel, gc);
 
         gc.gridx = 1;
-        gc.gridy = 1;
         gc.anchor = GridBagConstraints.LINE_START;
         gc.insets = new Insets(0,0,0,0);
         add(_jobField, gc);
 
         // 3rd row
+        gc.gridy++;
+
         gc.weightx = 1;
         gc.weighty = 0.1;
+
+        gc.gridx = 0;
+        gc.anchor = GridBagConstraints.FIRST_LINE_END;
+        gc.insets = new Insets(0,0,0,5);
+        add(_ageLabel, gc);
+
         gc.gridx = 1;
-        gc.gridy = 2;
         gc.anchor = GridBagConstraints.FIRST_LINE_START;
         add(_ageList, gc);
 
-        // 4th row
+        // 4rd row
+        gc.gridy++;
+
+        gc.weightx = 1;
+        gc.weighty = 0.1;
+
+        gc.gridx = 0;
+        gc.anchor = GridBagConstraints.FIRST_LINE_END;
+        gc.insets = new Insets(0,0,0,5);
+        add(_employmentLabel, gc);
+
+        gc.gridx = 1;
+        gc.anchor = GridBagConstraints.FIRST_LINE_START;
+        add(_employmentCombo, gc);
+
+        // 5th row
+        gc.gridy++;
+
+        gc.weightx = 1;
+        gc.weighty = 0.1;
+
+        gc.gridx = 0;
+        gc.anchor = GridBagConstraints.FIRST_LINE_END;
+        gc.insets = new Insets(0,0,0,5);
+        add(new JLabel("Is US citizen?"), gc);
+
+        gc.gridx = 1;
+        gc.anchor = GridBagConstraints.FIRST_LINE_START;
+        add(_citizenCheckBox, gc);
+
+        // 6th row
+        gc.gridy++;
+
+        gc.weightx = 1;
+        gc.weighty = 0.1;
+
+        gc.gridx = 0;
+        gc.anchor = GridBagConstraints.FIRST_LINE_END;
+        gc.insets = new Insets(0,0,0,5);
+        add(_taxLabel, gc);
+
+        gc.gridx = 1;
+        gc.anchor = GridBagConstraints.FIRST_LINE_START;
+        add(_taxField, gc);
+
+        // 7th row
+        gc.gridy++;
+
+        gc.weightx = 1;
+        gc.weighty = 0.05;
+
+        gc.gridx = 0;
+        gc.anchor = GridBagConstraints.LINE_END;
+        gc.insets = new Insets(0,0,0,5);
+        add(new JLabel("Gender: "), gc);
+
+        gc.gridx = 1;
+        gc.anchor = GridBagConstraints.FIRST_LINE_START;
+        add(_maleRadio, gc);
+
+        // 8th row
+        gc.gridy++;
+
+        gc.weightx = 1;
+        gc.weighty = 0.05;
+
+        gc.gridx = 1;
+        gc.anchor = GridBagConstraints.FIRST_LINE_START;
+        add(_femaleRadio, gc);
+
+        // 9th row
+        gc.gridy++;
+
         gc.weightx = 1;
         gc.weighty = 2.0;
         gc.gridx = 1;
-        gc.gridy = 3;
         gc.anchor = GridBagConstraints.FIRST_LINE_START;
         add(_okButton, gc);
     }
