@@ -3,6 +3,10 @@ package org.message_receiver.controllers;
 import org.message_receiver.models.*;
 import org.message_receiver.views.FormEvent;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
 public class Controller {
 
     private final Database _db;
@@ -25,16 +29,11 @@ public class Controller {
         EmploymentCategory employmentCategory;
         Gender gender;
 
-        switch(ageCategoryId) {
-            case 0:
-                ageCategory = AgeCategory.CHILD;
-                break;
-            case 2:
-                ageCategory = AgeCategory.SENIOR;
-                break;
-            default:
-                ageCategory = AgeCategory.ADULT;
-        }
+        ageCategory = switch (ageCategoryId) {
+            case 0 -> AgeCategory.CHILD;
+            case 2 -> AgeCategory.SENIOR;
+            default -> AgeCategory.ADULT;
+        };
 
         if (employmentCategoryValue.equals(ConstantValue.EMPLOYED)) {
             employmentCategory = EmploymentCategory.EMPLOYED;
@@ -59,6 +58,18 @@ public class Controller {
 
         _db.addPerson(person);
 
+    }
+
+    public List<Person> getPeople() {
+        return _db.getPeople();
+    }
+
+    public void saveToFile(File file) throws IOException {
+        _db.saveToFile(file);
+    }
+
+    public void loadFromFile(File file) throws IOException {
+        _db.loadFromFile(file);
     }
 
 

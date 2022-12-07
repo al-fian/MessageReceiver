@@ -1,6 +1,8 @@
 package org.message_receiver.models;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
 
     private static int count = 1;
     private int _id;

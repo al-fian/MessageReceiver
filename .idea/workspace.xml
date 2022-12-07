@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add new classes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/ConstantValue.java" afterDir="false" />
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="work on Controller">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/PersonTableModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/TablePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670386049619</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="work on Controller">
+      <created>1670394838682</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1670394838682</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -118,7 +127,8 @@
     <MESSAGE value="add EventObject" />
     <MESSAGE value="add AgeCategory class" />
     <MESSAGE value="add new classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new classes" />
+    <MESSAGE value="work on Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="work on Controller" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
