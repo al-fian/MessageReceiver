@@ -28,10 +28,19 @@ public class TablePanel extends JPanel {
         _table.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
+
+                int row = _table.rowAtPoint(e.getPoint());
+                _table.getSelectionModel().setSelectionInterval(row, row);
+
                 if (e.getButton() == MouseEvent.BUTTON3) {
                     _popup.show(_table, e.getX(), e.getY());
                 }
             }
+        });
+
+        _removeMenuItem.addActionListener(e -> {
+            int row = _table.getSelectedRow();
+            System.out.println(row);
         });
 
         setLayout(new BorderLayout());
