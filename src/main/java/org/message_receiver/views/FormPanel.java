@@ -1,5 +1,7 @@
 package org.message_receiver.views;
 
+import org.message_receiver.models.ConstantValue;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -46,8 +48,8 @@ public class FormPanel extends JPanel {
         _citizenCheckBox = new JCheckBox();
         _taxField = new JTextField(10);
         _taxLabel = new JLabel("Tax ID: ");
-        _maleRadio = new JRadioButton("Male");
-        _femaleRadio = new JRadioButton("Female");
+        _maleRadio = new JRadioButton(ConstantValue.MALE);
+        _femaleRadio = new JRadioButton(ConstantValue.FEMALE);
         _genderGroup = new ButtonGroup();
         _okButton = new JButton("OK");
 
@@ -91,9 +93,9 @@ public class FormPanel extends JPanel {
 
         // set up combo box
         DefaultComboBoxModel<String> _employmentComboModel = new DefaultComboBoxModel<>();
-        _employmentComboModel.addElement("employed");
-        _employmentComboModel.addElement("self-employed");
-        _employmentComboModel.addElement("unemployed");
+        _employmentComboModel.addElement(ConstantValue.EMPLOYED);
+        _employmentComboModel.addElement(ConstantValue.SELF_EMPLOYED);
+        _employmentComboModel.addElement(ConstantValue.UNEMPLOYED);
         _employmentCombo.setModel(_employmentComboModel);
         _employmentCombo.setSelectedIndex(0);
 

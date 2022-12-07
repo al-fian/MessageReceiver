@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add AgeCategory class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/controllers/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/AgeCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/EmploymentCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Gender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/PersonFileFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Utils.java" afterDir="false" />
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add new classes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/ConstantValue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/controllers/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670316019338</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add new classes">
+      <created>1670386049619</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1670386049619</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -117,7 +117,8 @@
     <MESSAGE value="add GridBagLayout" />
     <MESSAGE value="add EventObject" />
     <MESSAGE value="add AgeCategory class" />
-    <option name="LAST_COMMIT_MESSAGE" value="add AgeCategory class" />
+    <MESSAGE value="add new classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new classes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
