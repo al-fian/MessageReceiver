@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.prefs.Preferences;
 
 public class MainFrame extends JFrame {
@@ -47,7 +48,36 @@ public class MainFrame extends JFrame {
         add(_tablePanel, BorderLayout.CENTER);
         add(_formPanel, BorderLayout.LINE_START);
 
-        _toolbar.setStringListener(_textPanel::appendText);
+        _toolbar.setToolbarListener(new IToolbarListener() {
+            @Override
+            public void saveEventOccurred() {
+                connect();
+
+                try {
+                    _controller.save();
+                } catch (SQLException e) {
+                    JOptionPane.showMessageDialog(MainFrame.this,
+                            "Error Message","Could not save to database.",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+
+            }
+
+            @Override
+            public void refreshEventOccurred() {
+                connect();
+
+                try {
+                    _controller.load();
+                } catch (SQLException e) {
+                    JOptionPane.showMessageDialog(MainFrame.this,
+                            "Error Message","Unable to load from database.",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+
+                _tablePanel.refresh();
+            }
+        });
 
         _formPanel.setFormListener(e -> {
             _controller.addPerson(e);
@@ -160,5 +190,15 @@ public class MainFrame extends JFrame {
         });
 
         return _menuBar;
+    }
+
+    private void connect() {
+        try {
+            _controller.connect();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(MainFrame.this,
+                    "Error Message","Could not connect to database.",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
 }

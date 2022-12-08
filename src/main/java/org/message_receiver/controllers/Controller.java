@@ -5,6 +5,7 @@ import org.message_receiver.views.FormEvent;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 public class Controller {
@@ -74,6 +75,22 @@ public class Controller {
 
     public void removePerson(int index) {
         _db.removePerson(index);
+    }
+
+    public void save() throws SQLException {
+        _db.save();
+    }
+
+    public void load() throws SQLException {
+        _db.load();
+    }
+
+    public void connect() throws Exception {
+        _db.connect();
+    }
+
+    public void disconnect() {
+        _db.disconnect();
     }
 
 }
