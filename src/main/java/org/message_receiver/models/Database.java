@@ -1,16 +1,14 @@
 package org.message_receiver.models;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Database {
 
-    private final ArrayList<Person> _people;
+    private final List<Person> _people;
 
     public Database() {
-        _people = new ArrayList<>();
+        _people = new LinkedList<>();
     }
 
     public void addPerson(Person person) {
@@ -18,7 +16,7 @@ public class Database {
     }
 
     public List<Person> getPeople() {
-        return _people;
+        return Collections.unmodifiableList(_people);
     }
 
     public void saveToFile(File file) throws IOException {
