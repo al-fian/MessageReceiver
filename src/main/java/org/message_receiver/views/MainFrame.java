@@ -5,8 +5,7 @@ import org.message_receiver.models.PersonFileFilter;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.prefs.Preferences;
@@ -24,8 +23,18 @@ public class MainFrame extends JFrame {
     {
         super("Message Receiver");
 
+        // handle window closing
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                _controller.disconnect();
+                dispose();
+                System.gc();
+            }
+        });
+
         setSize(600, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setVisible(true);
 
         setLayout(new BorderLayout());
@@ -92,7 +101,6 @@ public class MainFrame extends JFrame {
 
         _preferenceDialog.setPreferenceListener((user, password, port) -> {
 
-            System.out.println(user + ": " + password + ": " + port);
             _preferenceProperties.put("user", user);
             _preferenceProperties.put("password", password);
             _preferenceProperties.putInt("port", port);
@@ -185,7 +193,11 @@ public class MainFrame extends JFrame {
                     JOptionPane.OK_CANCEL_OPTION);
 
             if (option == JOptionPane.OK_OPTION) {
-                System.exit(0);
+                WindowListener[] _windowListeners = getWindowListeners();
+
+                for(WindowListener windowListeners : _windowListeners) {
+                    windowListeners.windowClosing(new WindowEvent(MainFrame.this, 0));
+                }
             }
         });
 

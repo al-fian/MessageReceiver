@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add retrieve sql statement">
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add save and refresh db to mainframe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/IStringListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/IToolbarListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/Toolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/Toolbar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670496919447</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="add save and refresh db to mainframe">
+      <created>1670503332990</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1670503332990</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -264,7 +269,8 @@
     <MESSAGE value="add insert sql statement" />
     <MESSAGE value="add update sql statement" />
     <MESSAGE value="add retrieve sql statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="add retrieve sql statement" />
+    <MESSAGE value="add save and refresh db to mainframe" />
+    <option name="LAST_COMMIT_MESSAGE" value="add save and refresh db to mainframe" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

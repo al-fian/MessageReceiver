@@ -71,8 +71,6 @@ public class Database {
             throw new Exception("Driver not found");
         }
 
-        System.out.println("Connected: " + _conn);
-
     }
 
     public void disconnect() {
@@ -123,7 +121,6 @@ public class Database {
             int count = _checkResult.getInt(1);
 
             if (count == 0) {
-                System.out.println("Inserting person with ID " + id);
 
                 int column = 1;
                 _insertStmt.setInt(column++, id);
@@ -138,7 +135,6 @@ public class Database {
                 _insertStmt.executeUpdate();
             }
             else {
-                System.out.println("Updating person with ID " + id);
 
                 int column = 1;
                 _updateStmt.setString(column++, name);
@@ -185,9 +181,7 @@ public class Database {
                     EmploymentCategory.valueOf(employment),tax_id,us_citizen,Gender.valueOf(gender));
             _people.add(person);
 
-            System.out.println(person);
         }
-
 
         _queryResults.close();
         _retrieveStmt.close();
