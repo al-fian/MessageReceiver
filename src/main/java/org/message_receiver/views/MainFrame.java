@@ -15,6 +15,7 @@ public class MainFrame extends JFrame {
     private final JFileChooser _fileChooser;
     private final Controller _controller;
     private final TablePanel _tablePanel;
+    private final PreferenceDialog _preferenceDialog;
 
     public MainFrame()
     {
@@ -32,6 +33,7 @@ public class MainFrame extends JFrame {
         _fileChooser = new JFileChooser();
         _controller = new Controller();
         _tablePanel = new TablePanel();
+        _preferenceDialog = new PreferenceDialog(this);
 
         _fileChooser.addChoosableFileFilter(new PersonFileFilter());
 
@@ -71,10 +73,17 @@ public class MainFrame extends JFrame {
         _fileMenu.add(_exitItem);
 
         JMenu _showMenu = new JMenu("Show");
+        JMenuItem _preferenceMenuItem = new JMenuItem("Preferences...");
+
         _windowMenu.add(_showMenu);
+        _windowMenu.add(_preferenceMenuItem);
 
         JCheckBoxMenuItem _showFormItem = new JCheckBoxMenuItem("Person Form");
         _showFormItem.setSelected(true);
+
+        _preferenceMenuItem.addActionListener(e -> {
+            _preferenceDialog.setVisible(true);
+        });
 
         _showFormItem.addActionListener(e -> {
             JCheckBoxMenuItem _menuItem = (JCheckBoxMenuItem)e.getSource();

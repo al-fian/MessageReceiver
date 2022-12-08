@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="replace arraylist with linkedlist">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/IPersonTableListener.java" afterDir="false" />
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add rows deleting functionality">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/PreferenceDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/TablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/TablePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -144,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670462088729</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add rows deleting functionality">
+      <created>1670463492824</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670463492824</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -159,7 +163,8 @@
     <MESSAGE value="add popup menu" />
     <MESSAGE value="add selection row" />
     <MESSAGE value="replace arraylist with linkedlist" />
-    <option name="LAST_COMMIT_MESSAGE" value="replace arraylist with linkedlist" />
+    <MESSAGE value="add rows deleting functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="add rows deleting functionality" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
