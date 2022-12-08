@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.prefs.Preferences;
 
 public class MainFrame extends JFrame {
 
@@ -16,6 +17,7 @@ public class MainFrame extends JFrame {
     private final Controller _controller;
     private final TablePanel _tablePanel;
     private final PreferenceDialog _preferenceDialog;
+    private final Preferences _preferenceProperties;
 
     public MainFrame()
     {
@@ -34,6 +36,8 @@ public class MainFrame extends JFrame {
         _controller = new Controller();
         _tablePanel = new TablePanel();
         _preferenceDialog = new PreferenceDialog(this);
+
+        _preferenceProperties = Preferences.userRoot().node("db");
 
         _fileChooser.addChoosableFileFilter(new PersonFileFilter());
 
@@ -55,6 +59,20 @@ public class MainFrame extends JFrame {
         _tablePanel.setPersonTableListener(row -> {
             _controller.removePerson(row);
         });
+
+        _preferenceDialog.setPreferenceListener((user, password, port) -> {
+
+            System.out.println(user + ": " + password + ": " + port);
+            _preferenceProperties.put("user", user);
+            _preferenceProperties.put("password", password);
+            _preferenceProperties.putInt("port", port);
+
+        });
+
+        String user = _preferenceProperties.get("user", "");
+        String password = _preferenceProperties.get("password", "");
+        Integer port = _preferenceProperties.getInt("port", 3306);
+        _preferenceDialog.setDefaults(user, password, port);
     }
 
     public JMenuBar createMenuBar() {

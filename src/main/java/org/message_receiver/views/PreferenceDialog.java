@@ -11,6 +11,7 @@ public class PreferenceDialog extends JDialog {
     private final SpinnerNumberModel _spinnerModel;
     private final JTextField _userField;
     private final JPasswordField _passwordField;
+    private IPreferenceListener _preferenceListener;
 
     public PreferenceDialog(JFrame parent) {
         super(parent, "Preferences", false);
@@ -89,16 +90,26 @@ public class PreferenceDialog extends JDialog {
         _okButton.addActionListener(e -> {
             String user = _userField.getText();
             char[] password = _passwordField.getPassword();
-            Integer value = (Integer)_portSpinner.getValue();
+            Integer port = (Integer)_portSpinner.getValue();
 
-            System.out.println(user);
-            System.out.println(password);
-            System.out.println(value);
+            if (_preferenceListener != null) {
+                _preferenceListener.preferenceSet(user, new String(password), port);
+            }
 
             setVisible(false);
         });
 
         _cancelButton.addActionListener(e -> setVisible(false));
 
+    }
+
+    public void setPreferenceListener(IPreferenceListener listener) {
+        _preferenceListener = listener;
+    }
+
+    public void setDefaults(String user, String password, int port) {
+        _userField.setText(user);
+        _passwordField.setText(password);
+        _portSpinner.setValue(port);
     }
 }
