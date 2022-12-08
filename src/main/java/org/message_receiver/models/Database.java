@@ -1,9 +1,7 @@
 package org.message_receiver.models;
 
 import java.io.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.*;
 
 public class Database {
@@ -62,6 +60,13 @@ public class Database {
         try {
             Class.forName("org.sqlite.JDBC");
             _conn = DriverManager.getConnection("jdbc:sqlite:test.db");
+
+            Statement _createTableStatement = _conn.createStatement();
+            _createTableStatement.execute(
+                    "create table if not exists people" +
+                            "(id, name, age, job, employment_status, tax_id, us_citizen, gender)"
+            );
+
         } catch (ClassNotFoundException e) {
             throw new Exception("Driver not found");
         }
@@ -80,5 +85,28 @@ public class Database {
             }
         }
 
+    }
+
+    public void save() throws SQLException {
+
+        String _checkSql = "select count(*) as count from people where id=?";
+        PreparedStatement _checkStmt = _conn.prepareStatement(_checkSql);
+
+        for(Person person : _people) {
+
+            int id = person.getId();
+
+            _checkStmt.setInt(1, id);
+
+            ResultSet _checkResult = _checkStmt.executeQuery();
+            _checkResult.next();
+
+            int count = _checkResult.getInt(1);
+
+            System.out.println("Count person with ID " + id + " is " + count);
+
+        }
+
+        _checkStmt.close();
     }
 }
