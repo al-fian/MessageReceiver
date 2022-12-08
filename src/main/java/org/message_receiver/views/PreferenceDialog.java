@@ -1,6 +1,7 @@
 package org.message_receiver.views;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 public class PreferenceDialog extends JDialog {
@@ -27,65 +28,10 @@ public class PreferenceDialog extends JDialog {
         JSpinner.NumberEditor portNumber = new JSpinner.NumberEditor(_portSpinner, "#");
         _portSpinner.setEditor(portNumber);
 
-        setSize(400,300);
+        setSize(350,250);
         setLocationRelativeTo(parent);
 
-        setLayout(new GridBagLayout());
-
-        GridBagConstraints gc = new GridBagConstraints();
-
-        // 1st row
-        gc.gridy = 0;
-        gc.weighty = 1;
-        gc.weightx = 1;
-        gc.fill = GridBagConstraints.NONE;
-
-        gc.gridx = 0;
-        gc.anchor = GridBagConstraints.FIRST_LINE_END;
-        add(new JLabel("Username: "), gc);
-
-        gc.gridx++;
-        gc.anchor = GridBagConstraints.FIRST_LINE_START;
-        add(_userField, gc);
-
-        // next row
-        gc.gridy++;
-        gc.weighty = 1;
-        gc.weightx = 1;
-        gc.fill = GridBagConstraints.NONE;
-
-        gc.gridx = 0;
-        gc.anchor = GridBagConstraints.FIRST_LINE_END;
-        add(new JLabel("Password: "), gc);
-
-        gc.gridx++;
-        gc.anchor = GridBagConstraints.FIRST_LINE_START;
-        add(_passwordField, gc);
-
-        // next row
-        gc.gridy++;
-        gc.weighty = 1;
-        gc.weightx = 1;
-        gc.fill = GridBagConstraints.NONE;
-
-        gc.gridx = 0;
-        gc.anchor = GridBagConstraints.FIRST_LINE_END;
-        add(new JLabel("Port: "), gc);
-
-        gc.gridx++;
-        gc.anchor = GridBagConstraints.FIRST_LINE_START;
-        add(_portSpinner, gc);
-
-        // next row
-        gc.gridy++;
-
-        gc.gridx = 0;
-        gc.anchor = GridBagConstraints.FIRST_LINE_END;
-        add(_okButton, gc);
-
-        gc.gridx++;
-        gc.anchor = GridBagConstraints.FIRST_LINE_START;
-        add(_cancelButton, gc);
+        layoutControls();
 
         _okButton.addActionListener(e -> {
             String user = _userField.getText();
@@ -111,5 +57,85 @@ public class PreferenceDialog extends JDialog {
         _userField.setText(user);
         _passwordField.setText(password);
         _portSpinner.setValue(port);
+    }
+
+    private void layoutControls() {
+
+        JPanel _controlsPanel = new JPanel();
+        JPanel _buttonsPanel = new JPanel();
+
+        int space = 15;
+        Border spaceBorder = BorderFactory.createEmptyBorder(space,space,space,space);
+        Border _titledBorder = BorderFactory.createTitledBorder("Database Preference");
+
+        _controlsPanel.setBorder(BorderFactory.createCompoundBorder(spaceBorder,_titledBorder));
+
+        _controlsPanel.setLayout(new GridBagLayout());
+        GridBagConstraints gc = new GridBagConstraints();
+
+        Insets rightPadding = new Insets(0,0,0,5);
+        Insets noPadding = new Insets(0,0,0,0);
+
+        // 1st row
+        gc.gridy = 0;
+        gc.weightx = 1;
+        gc.weighty = 1;
+        gc.fill = GridBagConstraints.NONE;
+
+        gc.gridx = 0;
+        gc.anchor = GridBagConstraints.LINE_END;
+        gc.insets = rightPadding;
+        _controlsPanel.add(new JLabel("Username: "), gc);
+
+        gc.gridx++;
+        gc.anchor = GridBagConstraints.LINE_START;
+        gc.insets = noPadding;
+        _controlsPanel.add(_userField, gc);
+
+        // next row
+        gc.gridy++;
+        gc.weightx = 1;
+        gc.weighty = 1;
+        gc.fill = GridBagConstraints.NONE;
+
+        gc.gridx = 0;
+        gc.anchor = GridBagConstraints.LINE_END;
+        gc.insets = rightPadding;
+        _controlsPanel.add(new JLabel("Password: "), gc);
+
+        gc.gridx++;
+        gc.anchor = GridBagConstraints.LINE_START;
+        gc.insets = noPadding;
+        _controlsPanel.add(_passwordField, gc);
+
+        // next row
+        gc.gridy++;
+        gc.weightx = 1;
+        gc.weighty = 1;
+        gc.fill = GridBagConstraints.NONE;
+
+        gc.gridx = 0;
+        gc.anchor = GridBagConstraints.LINE_END;
+        gc.insets = rightPadding;
+        _controlsPanel.add(new JLabel("Port: "), gc);
+
+        gc.gridx++;
+        gc.anchor = GridBagConstraints.LINE_START;
+        gc.insets = noPadding;
+        _controlsPanel.add(_portSpinner, gc);
+
+        // buttons panel
+        _buttonsPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        _buttonsPanel.add(_okButton);
+        _buttonsPanel.add(_cancelButton);
+
+        Dimension _buttonSize = _cancelButton.getPreferredSize();
+        _okButton.setPreferredSize(_buttonSize);
+
+        // dialog panel
+        setLayout(new BorderLayout());
+        add(_controlsPanel, BorderLayout.CENTER);
+        add(_buttonsPanel, BorderLayout.PAGE_END);
+
     }
 }

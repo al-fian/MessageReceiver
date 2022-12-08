@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add password">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/IPreferenceListener.java" afterDir="false" />
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add default preferences">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/PreferenceDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/PreferenceDialog.java" afterDir="false" />
@@ -171,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670469910226</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add default preferences">
+      <created>1670471977859</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1670471977859</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -190,7 +195,8 @@
     <MESSAGE value="add preference dialog" />
     <MESSAGE value="add port spinner" />
     <MESSAGE value="add password" />
-    <option name="LAST_COMMIT_MESSAGE" value="add password" />
+    <MESSAGE value="add default preferences" />
+    <option name="LAST_COMMIT_MESSAGE" value="add default preferences" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
