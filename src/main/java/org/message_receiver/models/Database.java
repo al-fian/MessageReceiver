@@ -1,11 +1,15 @@
 package org.message_receiver.models;
 
 import java.io.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.*;
 
 public class Database {
 
     private final List<Person> _people;
+    private Connection _conn;
 
     public Database() {
         _people = new LinkedList<>();
@@ -49,5 +53,32 @@ public class Database {
 
     public void removePerson(int index) {
         _people.remove(index);
+    }
+
+    public void connect() throws Exception {
+
+        if (_conn != null) return;
+
+        try {
+            Class.forName("org.sqlite.JDBC");
+            _conn = DriverManager.getConnection("jdbc:sqlite:test.db");
+        } catch (ClassNotFoundException e) {
+            throw new Exception("Driver not found");
+        }
+
+        System.out.println("Connected: " + _conn);
+
+    }
+
+    public void disconnect() {
+
+        if (_conn != null) {
+            try {
+                _conn.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
     }
 }
