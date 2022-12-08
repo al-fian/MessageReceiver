@@ -49,6 +49,10 @@ public class MainFrame extends JFrame {
         });
 
         _tablePanel.setData(_controller.getPeople());
+
+        _tablePanel.setPersonTableListener(row -> {
+            _controller.removePerson(row);
+        });
     }
 
     public JMenuBar createMenuBar() {
@@ -69,7 +73,6 @@ public class MainFrame extends JFrame {
         JMenu _showMenu = new JMenu("Show");
         _windowMenu.add(_showMenu);
 
-//        JMenuItem _showFormItem = new JMenuItem("Person Form");
         JCheckBoxMenuItem _showFormItem = new JCheckBoxMenuItem("Person Form");
         _showFormItem.setSelected(true);
 

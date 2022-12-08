@@ -72,5 +72,8 @@ public class Controller {
         _db.loadFromFile(file);
     }
 
+    public void removePerson(int index) {
+        _db.removePerson(index);
+    }
 
 }

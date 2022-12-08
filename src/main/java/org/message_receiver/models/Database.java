@@ -46,4 +46,8 @@ public class Database {
 
         ios.close();
     }
+
+    public void removePerson(int index) {
+        _people.remove(index);
+    }
 }
