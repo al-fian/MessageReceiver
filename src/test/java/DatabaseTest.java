@@ -15,12 +15,12 @@ public class DatabaseTest {
         }
 
         _db.addPerson(new Person("Donald",
-                "comedian", AgeCategory.ADULT, EmploymentCategory.SELF_EMPLOYED,
+                "sailor", AgeCategory.ADULT, EmploymentCategory.UNEMPLOYED,
                 "1771", true, Gender.MALE));
 
         _db.addPerson(new Person("McDuck",
-                "banker", AgeCategory.SENIOR, EmploymentCategory.SELF_EMPLOYED,
-                "03421", true, Gender.MALE));
+                "treasure hunter", AgeCategory.ADULT, EmploymentCategory.SELF_EMPLOYED,
+                null, false, Gender.MALE));
 
         try {
             _db.save();

@@ -98,6 +98,12 @@ public class Database {
 
         PreparedStatement _insertStmt = _conn.prepareStatement(_insertSql);
 
+        String _updateSql = "update people set " +
+                "name=?, age=?, job=?, employment_status=?, tax_id=?, us_citizen=?, gender=? " +
+                "where id=?";
+
+        PreparedStatement _updateStmt = _conn.prepareStatement(_updateSql);
+
         for(Person person : _people) {
 
             int id = person.getId();
@@ -133,10 +139,23 @@ public class Database {
             }
             else {
                 System.out.println("Updating person with ID " + id);
+
+                int column = 1;
+                _updateStmt.setString(column++, name);
+                _updateStmt.setString(column++, age.name());
+                _updateStmt.setString(column++, job);
+                _updateStmt.setString(column++, employment.name());
+                _updateStmt.setString(column++, taxId);
+                _updateStmt.setBoolean(column++, usCitizen);
+                _updateStmt.setString(column++, gender.name());
+                _updateStmt.setInt(column++, id);
+
+                _updateStmt.executeUpdate();
             }
 
         }
 
+        _updateStmt.close();
         _insertStmt.close();
         _checkStmt.close();
     }
