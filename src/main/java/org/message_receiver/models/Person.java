@@ -31,6 +31,15 @@ public class Person implements Serializable {
 
     }
 
+    public Person(int id, String name, String job, AgeCategory ageCategory,
+                  EmploymentCategory employmentCategory, String taxId,
+                  boolean usCitizen, Gender gender) {
+
+        this(name, job, ageCategory, employmentCategory, taxId, usCitizen, gender);
+
+        _id = id;
+    }
+
     public int getId() {
         return _id;
     }
@@ -93,5 +102,10 @@ public class Person implements Serializable {
 
     public void setGender(Gender gender) {
         _gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return ("Name(" + getName() + ")" + " with ID(" + getId()+")");
     }
 }

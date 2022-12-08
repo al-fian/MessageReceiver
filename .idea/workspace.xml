@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add insert sql statement">
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add update sql statement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670492333759</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="add update sql statement">
+      <created>1670494336028</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1670494336028</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -246,7 +254,8 @@
     <MESSAGE value="add sqlite jdbc" />
     <MESSAGE value="add db connection" />
     <MESSAGE value="add insert sql statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="add insert sql statement" />
+    <MESSAGE value="add update sql statement" />
+    <option name="LAST_COMMIT_MESSAGE" value="add update sql statement" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

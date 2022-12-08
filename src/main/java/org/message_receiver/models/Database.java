@@ -159,4 +159,37 @@ public class Database {
         _insertStmt.close();
         _checkStmt.close();
     }
+
+    public void load() throws SQLException {
+        _people.clear();
+
+        String _retrieveSql = "select id, name, age, job, employment_status, tax_id, us_citizen, gender " +
+                "from people order by name";
+
+        Statement _retrieveStmt = _conn.createStatement();
+
+        ResultSet _queryResults = _retrieveStmt.executeQuery(_retrieveSql);
+
+        while (_queryResults.next()) {
+
+            int id = _queryResults.getInt("id");
+            String name = _queryResults.getString("name");
+            String age = _queryResults.getString("age");
+            String job = _queryResults.getString("job");
+            String employment = _queryResults.getString("employment_status");
+            String tax_id = _queryResults.getString("tax_id");
+            boolean us_citizen = _queryResults.getBoolean("us_citizen");
+            String gender = _queryResults.getString("gender");
+
+            Person person = new Person(id,name,job,AgeCategory.valueOf(age),
+                    EmploymentCategory.valueOf(employment),tax_id,us_citizen,Gender.valueOf(gender));
+            _people.add(person);
+
+            System.out.println(person);
+        }
+
+
+        _queryResults.close();
+        _retrieveStmt.close();
+    }
 }

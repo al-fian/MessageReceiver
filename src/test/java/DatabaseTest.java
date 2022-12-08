@@ -28,6 +28,12 @@ public class DatabaseTest {
             throw new RuntimeException(e);
         }
 
+        try {
+            _db.load();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
         _db.disconnect();
     }
 }
