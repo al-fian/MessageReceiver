@@ -3,6 +3,8 @@ package org.message_receiver.views;
 import org.message_receiver.models.Utils;
 
 import javax.swing.*;
+import javax.swing.event.CellEditorListener;
+import javax.swing.event.ChangeEvent;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -28,16 +30,18 @@ public class MessagePanel extends JPanel {
 
         _serverTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 
-        _serverTree.addTreeSelectionListener(e -> {
-            DefaultMutableTreeNode node = (DefaultMutableTreeNode)_serverTree.getLastSelectedPathComponent();
+        _treeCellEditor.addCellEditorListener(new CellEditorListener() {
+            @Override
+            public void editingStopped(ChangeEvent e) {
+                ServerInfo _serverInfo = (ServerInfo) _treeCellEditor.getCellEditorValue();
 
-            // UserObject is whatever the object passed to DefaultMutableTreeNode
-            // in this case, it's a string. ie, "USA" or "UK"
-            // String userObject = (String)node.getUserObject();
+                System.out.println(_serverInfo + ": " + _serverInfo.getId() + ": " + _serverInfo.isChecked());
+            }
 
-            Object userObject = node.getUserObject();
+            @Override
+            public void editingCanceled(ChangeEvent e) {
 
-            System.out.println(userObject);
+            }
         });
 
         setLayout(new BorderLayout());
@@ -71,31 +75,3 @@ public class MessagePanel extends JPanel {
     }
 }
 
-class ServerInfo {
-    private final String _name;
-    private final int _id;
-    private boolean _checked;
-
-    public ServerInfo(String name, int id, boolean checked) {
-        _name = name;
-        _id = id;
-        _checked = checked;
-    }
-
-    public int getId() {
-        return _id;
-    }
-
-    public boolean isChecked() {
-        return _checked;
-    }
-
-    public void setChecked(boolean checked) {
-        _checked = checked;
-    }
-
-    @Override
-    public String toString() {
-        return _name;
-    }
-}

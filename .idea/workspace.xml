@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add checkbox for tree leaf">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/ServerTreeCellEditor.java" afterDir="false" />
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add editable on checkbox of tree leaf">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/ServerInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" afterDir="false" />
     </list>
@@ -66,6 +66,9 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\alfia\IdeaProjects\MessageReceiver\src\main\java\org\message_receiver\assets\icons" />
       <recent name="C:\Users\alfia\IdeaProjects\MessageReceiver\src\main\resources\assets\icons" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.message_receiver.views" />
     </key>
   </component>
   <component name="RunManager">
@@ -322,11 +325,17 @@
       <option name="project" value="LOCAL" />
       <updated>1670577072464</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="add editable on checkbox of tree leaf">
+      <created>1670582622153</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1670582622153</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add popup menu" />
     <MESSAGE value="add selection row" />
     <MESSAGE value="replace arraylist with linkedlist" />
     <MESSAGE value="add rows deleting functionality" />
@@ -351,7 +360,8 @@
     <MESSAGE value="add association between data and tree node" />
     <MESSAGE value="add tree node icons" />
     <MESSAGE value="add checkbox for tree leaf" />
-    <option name="LAST_COMMIT_MESSAGE" value="add checkbox for tree leaf" />
+    <MESSAGE value="add editable on checkbox of tree leaf" />
+    <option name="LAST_COMMIT_MESSAGE" value="add editable on checkbox of tree leaf" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
