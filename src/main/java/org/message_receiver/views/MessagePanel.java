@@ -13,8 +13,11 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class MessagePanel extends JPanel {
 
@@ -62,12 +65,7 @@ public class MessagePanel extends JPanel {
 
                 _messageServer.setSelectedServers(_selectedServers);
 
-                System.out.println("Message waiting: " + _messageServer.getMessageCount());
-
-                for (Message message : _messageServer) {
-                    System.out.println("Message title: " + message.getTitle());
-
-                }
+                retrieveMessages();
             }
 
             @Override
@@ -109,6 +107,56 @@ public class MessagePanel extends JPanel {
         top.add(branch2);
 
         return top;
+    }
+
+    private void retrieveMessages() {
+
+        System.out.println("Message waiting: " + _messageServer.getMessageCount());
+
+        SwingWorker<List<Message>, Integer> _worker = new SwingWorker<List<Message>, Integer>() {
+            @Override
+            protected List<Message> doInBackground() throws Exception {
+
+                List<Message> _retrievedMessages = new ArrayList<>();
+
+                int count = 0;
+
+                for (Message message : _messageServer) {
+                    System.out.println("Message title: " + message.getTitle());
+
+                    _retrievedMessages.add(message);
+
+                    count++;
+
+                    publish(count);
+
+                }
+
+                return _retrievedMessages;
+            }
+
+            @Override
+            protected void process(List<Integer> counts) {
+                int retrieved = counts.get(counts.size() - 1);
+                System.out.println("Got " + retrieved + " messages.");
+            }
+
+            @Override
+            protected void done() {
+
+                try {
+                    List<Message> _retrievedMessages = get();
+                    System.out.println("Retrieved " + _retrievedMessages.size() + " messages.");
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                } catch (ExecutionException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        };
+
+        _worker.execute();
+
     }
 }
 

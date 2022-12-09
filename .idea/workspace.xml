@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add detecting changes on checkbox on tree leaf">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/controllers/MessageServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Message.java" afterDir="false" />
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add message server simulation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" afterDir="false" />
     </list>
@@ -340,11 +338,17 @@
       <option name="project" value="LOCAL" />
       <updated>1670583437251</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="add message server simulation">
+      <created>1670594148626</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1670594148626</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="replace arraylist with linkedlist" />
     <MESSAGE value="add rows deleting functionality" />
     <MESSAGE value="add preference dialog" />
     <MESSAGE value="add port spinner" />
@@ -369,7 +373,8 @@
     <MESSAGE value="add checkbox for tree leaf" />
     <MESSAGE value="add editable on checkbox of tree leaf" />
     <MESSAGE value="add detecting changes on checkbox on tree leaf" />
-    <option name="LAST_COMMIT_MESSAGE" value="add detecting changes on checkbox on tree leaf" />
+    <MESSAGE value="add message server simulation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add message server simulation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
