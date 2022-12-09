@@ -1,33 +1,44 @@
 package org.message_receiver.views;
 
+import org.message_receiver.models.Utils;
+
 import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
 
 public class MessagePanel extends JPanel {
 
     private final JTree _serverTree;
+    private final DefaultTreeCellRenderer _treeCellRenderer;
+
     public MessagePanel() {
 
+        _treeCellRenderer = new DefaultTreeCellRenderer();
+
+        _treeCellRenderer.setLeafIcon(Utils.createIcon("/images/Server16.gif"));
+        _treeCellRenderer.setOpenIcon(Utils.createIcon("/images/WebComponent16.gif"));
+        _treeCellRenderer.setClosedIcon(Utils.createIcon("/images/WebComponentAdd16.gif"));
+
         _serverTree = new JTree(createTree());
+
+        _serverTree.setCellRenderer(_treeCellRenderer);
+
         _serverTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 
-        _serverTree.addTreeSelectionListener(new TreeSelectionListener() {
-            @Override
-            public void valueChanged(TreeSelectionEvent e) {
-                DefaultMutableTreeNode node = (DefaultMutableTreeNode)_serverTree.getLastSelectedPathComponent();
+        _serverTree.addTreeSelectionListener(e -> {
+            DefaultMutableTreeNode node = (DefaultMutableTreeNode)_serverTree.getLastSelectedPathComponent();
 
-                // UserObject is whatever the object passed to DefaultMutableTreeNode
-                // in this case, it's a string. ie, "USA" or "UK"
-                // String userObject = (String)node.getUserObject();
+            // UserObject is whatever the object passed to DefaultMutableTreeNode
+            // in this case, it's a string. ie, "USA" or "UK"
+            // String userObject = (String)node.getUserObject();
 
-                Object userObject = node.getUserObject();
+            Object userObject = node.getUserObject();
 
-                System.out.println(userObject);
-            }
+            System.out.println(userObject);
         });
 
         setLayout(new BorderLayout());

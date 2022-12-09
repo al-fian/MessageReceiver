@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add tree selection event">
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add association between data and tree node">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Information24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Refresh16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Save16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Server16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/WebComponent16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/WebComponentAdd16.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/models/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/Toolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/Toolbar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,11 +308,17 @@
       <option name="project" value="LOCAL" />
       <updated>1670564787229</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="add association between data and tree node">
+      <created>1670565877145</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1670565877145</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add new classes" />
     <MESSAGE value="work on Controller" />
     <MESSAGE value="add export and import" />
     <MESSAGE value="add popup menu" />
@@ -329,7 +343,8 @@
     <MESSAGE value="add jtabbedpane" />
     <MESSAGE value="add jtree" />
     <MESSAGE value="add tree selection event" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tree selection event" />
+    <MESSAGE value="add association between data and tree node" />
+    <option name="LAST_COMMIT_MESSAGE" value="add association between data and tree node" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

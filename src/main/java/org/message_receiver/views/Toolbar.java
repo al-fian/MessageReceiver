@@ -1,5 +1,7 @@
 package org.message_receiver.views;
 
+import org.message_receiver.models.Utils;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,11 +20,11 @@ public class Toolbar extends JToolBar implements ActionListener {
         setFloatable(false);
 
         _saveButton = new JButton();
-        _saveButton.setIcon(createIcon("images/save16.png"));
+        _saveButton.setIcon(Utils.createIcon("/images/Save16.gif"));
         _saveButton.setToolTipText("Save");
 
         _refreshButton = new JButton();
-        _refreshButton.setIcon(createIcon("images/refresh16.png"));
+        _refreshButton.setIcon(Utils.createIcon("/images/Refresh16.gif"));
         _refreshButton.setToolTipText("Reload");
 
         setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -52,17 +54,5 @@ public class Toolbar extends JToolBar implements ActionListener {
             _listener.refreshEventOccurred();
         }
 
-    }
-
-    private ImageIcon createIcon(String path) {
-
-        URL url = getClass().getClassLoader().getResource(path);
-
-        if (url == null) {
-            System.err.println("Unable to load icon: " + path);
-            return null;
-        }
-
-        return new ImageIcon(url);
     }
 }
