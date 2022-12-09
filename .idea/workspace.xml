@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add jtabbedpane">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" afterDir="false" />
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add jtree">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,11 +286,17 @@
       <option name="project" value="LOCAL" />
       <updated>1670562622722</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="add jtree">
+      <created>1670563886477</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1670563886477</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add EventObject" />
     <MESSAGE value="add AgeCategory class" />
     <MESSAGE value="add new classes" />
     <MESSAGE value="work on Controller" />
@@ -316,7 +321,8 @@
     <MESSAGE value="add jtoolbar" />
     <MESSAGE value="add jsplitpane" />
     <MESSAGE value="add jtabbedpane" />
-    <option name="LAST_COMMIT_MESSAGE" value="add jtabbedpane" />
+    <MESSAGE value="add jtree" />
+    <option name="LAST_COMMIT_MESSAGE" value="add jtree" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

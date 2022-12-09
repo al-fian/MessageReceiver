@@ -1,7 +1,10 @@
 package org.message_receiver.views;
 
 import javax.swing.*;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
 
 public class MessagePanel extends JPanel {
@@ -10,6 +13,22 @@ public class MessagePanel extends JPanel {
     public MessagePanel() {
 
         _serverTree = new JTree(createTree());
+        _serverTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+
+        _serverTree.addTreeSelectionListener(new TreeSelectionListener() {
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                DefaultMutableTreeNode node = (DefaultMutableTreeNode)_serverTree.getLastSelectedPathComponent();
+
+                // UserObject is whatever the object passed to DefaultMutableTreeNode
+                // in this case, it's a string. ie, "USA" or "UK"
+                // String userObject = (String)node.getUserObject();
+
+                Object userObject = node.getUserObject();
+
+                System.out.println(userObject);
+            }
+        });
 
         setLayout(new BorderLayout());
 
@@ -17,7 +36,7 @@ public class MessagePanel extends JPanel {
     }
 
     private DefaultMutableTreeNode createTree() {
-        DefaultMutableTreeNode top = new DefaultMutableTreeNode("Server");
+        DefaultMutableTreeNode top = new DefaultMutableTreeNode("Servers");
 
         DefaultMutableTreeNode branch1 = new DefaultMutableTreeNode("USA");
         DefaultMutableTreeNode server1 = new DefaultMutableTreeNode("New York");
