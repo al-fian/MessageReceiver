@@ -13,20 +13,14 @@ import java.awt.*;
 public class MessagePanel extends JPanel {
 
     private final JTree _serverTree;
-    private final DefaultTreeCellRenderer _treeCellRenderer;
+    private final ServerTreeCellRenderer _treeCellRenderer;
 
     public MessagePanel() {
 
-        _treeCellRenderer = new DefaultTreeCellRenderer();
-
-        _treeCellRenderer.setLeafIcon(Utils.createIcon("/images/Server16.gif"));
-        _treeCellRenderer.setOpenIcon(Utils.createIcon("/images/WebComponent16.gif"));
-        _treeCellRenderer.setClosedIcon(Utils.createIcon("/images/WebComponentAdd16.gif"));
+        _treeCellRenderer = new ServerTreeCellRenderer();
 
         _serverTree = new JTree(createTree());
-
         _serverTree.setCellRenderer(_treeCellRenderer);
-
         _serverTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 
         _serverTree.addTreeSelectionListener(e -> {
@@ -50,13 +44,13 @@ public class MessagePanel extends JPanel {
         DefaultMutableTreeNode top = new DefaultMutableTreeNode("Servers");
 
         DefaultMutableTreeNode branch1 = new DefaultMutableTreeNode("USA");
-        DefaultMutableTreeNode server1 = new DefaultMutableTreeNode(new ServerInfo("New York", 1));
-        DefaultMutableTreeNode server2 = new DefaultMutableTreeNode(new ServerInfo("Boston",2));
-        DefaultMutableTreeNode server3 = new DefaultMutableTreeNode(new ServerInfo("California",3));
+        DefaultMutableTreeNode server1 = new DefaultMutableTreeNode(new ServerInfo("New York", 1, true));
+        DefaultMutableTreeNode server2 = new DefaultMutableTreeNode(new ServerInfo("Boston",2, true));
+        DefaultMutableTreeNode server3 = new DefaultMutableTreeNode(new ServerInfo("California",3, false));
 
         DefaultMutableTreeNode branch2 = new DefaultMutableTreeNode("UK");
-        DefaultMutableTreeNode server4 = new DefaultMutableTreeNode(new ServerInfo("London", 4));
-        DefaultMutableTreeNode server5 = new DefaultMutableTreeNode(new ServerInfo("Manchester",5));
+        DefaultMutableTreeNode server4 = new DefaultMutableTreeNode(new ServerInfo("London", 4, true));
+        DefaultMutableTreeNode server5 = new DefaultMutableTreeNode(new ServerInfo("Manchester",5, false));
 
         branch1.add(server1);
         branch1.add(server2);
@@ -75,14 +69,24 @@ public class MessagePanel extends JPanel {
 class ServerInfo {
     private final String _name;
     private final int _id;
+    private boolean _checked;
 
-    public ServerInfo(String name, int id) {
+    public ServerInfo(String name, int id, boolean checked) {
         _name = name;
         _id = id;
+        _checked = checked;
     }
 
     public int getId() {
         return _id;
+    }
+
+    public boolean isChecked() {
+        return _checked;
+    }
+
+    public void setChecked(boolean checked) {
+        _checked = checked;
     }
 
     @Override
