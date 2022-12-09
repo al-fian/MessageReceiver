@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 
-public class Toolbar extends JPanel implements ActionListener {
+public class Toolbar extends JToolBar implements ActionListener {
 
     private final JButton _saveButton;
     private final JButton _refreshButton;
@@ -14,13 +14,16 @@ public class Toolbar extends JPanel implements ActionListener {
 
     public Toolbar() {
 
-        setBorder(BorderFactory.createEtchedBorder());
+        // setBorder(BorderFactory.createEtchedBorder());
+        setFloatable(false);
 
-        _saveButton = new JButton("Save");
+        _saveButton = new JButton();
         _saveButton.setIcon(createIcon("images/save16.png"));
+        _saveButton.setToolTipText("Save");
 
-        _refreshButton = new JButton("Refresh");
+        _refreshButton = new JButton();
         _refreshButton.setIcon(createIcon("images/refresh16.png"));
+        _refreshButton.setToolTipText("Reload");
 
         setLayout(new FlowLayout(FlowLayout.LEFT));
 

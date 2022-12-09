@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add window closing to disconnect db">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/down16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/refresh16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/save16.png" afterDir="false" />
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add icons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/Toolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/Toolbar.java" afterDir="false" />
     </list>
@@ -261,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670504707417</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="add icons">
+      <created>1670557170664</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1670557170664</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -289,7 +293,8 @@
     <MESSAGE value="add retrieve sql statement" />
     <MESSAGE value="add save and refresh db to mainframe" />
     <MESSAGE value="add window closing to disconnect db" />
-    <option name="LAST_COMMIT_MESSAGE" value="add window closing to disconnect db" />
+    <MESSAGE value="add icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="add icons" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
