@@ -39,13 +39,13 @@ public class MessagePanel extends JPanel {
         DefaultMutableTreeNode top = new DefaultMutableTreeNode("Servers");
 
         DefaultMutableTreeNode branch1 = new DefaultMutableTreeNode("USA");
-        DefaultMutableTreeNode server1 = new DefaultMutableTreeNode("New York");
-        DefaultMutableTreeNode server2 = new DefaultMutableTreeNode("Boston");
-        DefaultMutableTreeNode server3 = new DefaultMutableTreeNode("California");
+        DefaultMutableTreeNode server1 = new DefaultMutableTreeNode(new ServerInfo("New York", 1));
+        DefaultMutableTreeNode server2 = new DefaultMutableTreeNode(new ServerInfo("Boston",2));
+        DefaultMutableTreeNode server3 = new DefaultMutableTreeNode(new ServerInfo("California",3));
 
         DefaultMutableTreeNode branch2 = new DefaultMutableTreeNode("UK");
-        DefaultMutableTreeNode server4 = new DefaultMutableTreeNode("London");
-        DefaultMutableTreeNode server5 = new DefaultMutableTreeNode("Manchester");
+        DefaultMutableTreeNode server4 = new DefaultMutableTreeNode(new ServerInfo("London", 4));
+        DefaultMutableTreeNode server5 = new DefaultMutableTreeNode(new ServerInfo("Manchester",5));
 
         branch1.add(server1);
         branch1.add(server2);
@@ -58,5 +58,24 @@ public class MessagePanel extends JPanel {
         top.add(branch2);
 
         return top;
+    }
+}
+
+class ServerInfo {
+    private final String _name;
+    private final int _id;
+
+    public ServerInfo(String name, int id) {
+        _name = name;
+        _id = id;
+    }
+
+    public int getId() {
+        return _id;
+    }
+
+    @Override
+    public String toString() {
+        return _name;
     }
 }
