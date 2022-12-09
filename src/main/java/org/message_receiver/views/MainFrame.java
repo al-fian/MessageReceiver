@@ -18,6 +18,7 @@ public class MainFrame extends JFrame {
     private final TablePanel _tablePanel;
     private final PreferenceDialog _preferenceDialog;
     private final Preferences _preferenceProperties;
+    private final JSplitPane _splitPane;
 
     public MainFrame()
     {
@@ -47,6 +48,9 @@ public class MainFrame extends JFrame {
         _tablePanel = new TablePanel();
         _preferenceDialog = new PreferenceDialog(this);
 
+        _splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, _formPanel, _tablePanel);
+        _splitPane.setOneTouchExpandable(true);
+
         _preferenceProperties = Preferences.userRoot().node("db");
 
         _fileChooser.addChoosableFileFilter(new PersonFileFilter());
@@ -54,8 +58,7 @@ public class MainFrame extends JFrame {
         setJMenuBar(createMenuBar());
 
         add(_toolbar, BorderLayout.PAGE_START);
-        add(_tablePanel, BorderLayout.CENTER);
-        add(_formPanel, BorderLayout.LINE_START);
+        add(_splitPane, BorderLayout.CENTER);
 
         _toolbar.setToolbarListener(new IToolbarListener() {
             @Override
@@ -143,6 +146,10 @@ public class MainFrame extends JFrame {
 
         _showFormItem.addActionListener(e -> {
             JCheckBoxMenuItem _menuItem = (JCheckBoxMenuItem)e.getSource();
+
+            if (_menuItem.isSelected()) {
+                _splitPane.setDividerLocation((int)_formPanel.getMinimumSize().getWidth());
+            }
 
             _formPanel.setVisible(_menuItem.isSelected());
         });
