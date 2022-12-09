@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add jtoolbar">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/FormPanel.java" afterDir="false" />
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add jsplitpane">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -273,11 +271,17 @@
       <option name="project" value="LOCAL" />
       <updated>1670557883496</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add jsplitpane">
+      <created>1670562039070</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1670562039070</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add Toolbar and TextPanel" />
     <MESSAGE value="add GridBagLayout" />
     <MESSAGE value="add EventObject" />
     <MESSAGE value="add AgeCategory class" />
@@ -302,7 +306,8 @@
     <MESSAGE value="add window closing to disconnect db" />
     <MESSAGE value="add icons" />
     <MESSAGE value="add jtoolbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="add jtoolbar" />
+    <MESSAGE value="add jsplitpane" />
+    <option name="LAST_COMMIT_MESSAGE" value="add jsplitpane" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
