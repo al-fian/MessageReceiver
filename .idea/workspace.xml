@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add tree node icons">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/ServerTreeCellRenderer.java" afterDir="false" />
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add checkbox for tree leaf">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/ServerTreeCellEditor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" afterDir="false" />
     </list>
@@ -315,11 +315,17 @@
       <option name="project" value="LOCAL" />
       <updated>1670568769135</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="add checkbox for tree leaf">
+      <created>1670577072464</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1670577072464</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add export and import" />
     <MESSAGE value="add popup menu" />
     <MESSAGE value="add selection row" />
     <MESSAGE value="replace arraylist with linkedlist" />
@@ -344,7 +350,8 @@
     <MESSAGE value="add tree selection event" />
     <MESSAGE value="add association between data and tree node" />
     <MESSAGE value="add tree node icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tree node icons" />
+    <MESSAGE value="add checkbox for tree leaf" />
+    <option name="LAST_COMMIT_MESSAGE" value="add checkbox for tree leaf" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

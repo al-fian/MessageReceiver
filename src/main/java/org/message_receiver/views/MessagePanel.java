@@ -14,13 +14,18 @@ public class MessagePanel extends JPanel {
 
     private final JTree _serverTree;
     private final ServerTreeCellRenderer _treeCellRenderer;
+    private final ServerTreeCellEditor _treeCellEditor;
 
     public MessagePanel() {
 
         _treeCellRenderer = new ServerTreeCellRenderer();
+        _treeCellEditor = new ServerTreeCellEditor();
 
         _serverTree = new JTree(createTree());
         _serverTree.setCellRenderer(_treeCellRenderer);
+        _serverTree.setCellEditor(_treeCellEditor);
+        _serverTree.setEditable(true);
+
         _serverTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 
         _serverTree.addTreeSelectionListener(e -> {
