@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="complete progressbar slide">
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add text on progress bar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/ProgressDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/ProgressDialog.java" afterDir="false" />
     </list>
@@ -373,11 +373,17 @@
       <option name="project" value="LOCAL" />
       <updated>1670644723430</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="add text on progress bar">
+      <created>1670645431468</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1670645431468</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add default preferences" />
     <MESSAGE value="add borders to preference dialog" />
     <MESSAGE value="add sqlite jdbc" />
     <MESSAGE value="add db connection" />
@@ -402,7 +408,8 @@
     <MESSAGE value="add progress dialog" />
     <MESSAGE value="add override setvisible" />
     <MESSAGE value="complete progressbar slide" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete progressbar slide" />
+    <MESSAGE value="add text on progress bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="add text on progress bar" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
