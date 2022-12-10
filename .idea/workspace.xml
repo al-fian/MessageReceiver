@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add progress dialog">
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add override setvisible">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/ProgressDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/ProgressDialog.java" afterDir="false" />
     </list>
@@ -361,11 +360,17 @@
       <option name="project" value="LOCAL" />
       <updated>1670642013010</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="add override setvisible">
+      <created>1670644091093</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1670644091093</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add port spinner" />
     <MESSAGE value="add password" />
     <MESSAGE value="add default preferences" />
     <MESSAGE value="add borders to preference dialog" />
@@ -390,7 +395,8 @@
     <MESSAGE value="add message server simulation" />
     <MESSAGE value="add multi-threading" />
     <MESSAGE value="add progress dialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="add progress dialog" />
+    <MESSAGE value="add override setvisible" />
+    <option name="LAST_COMMIT_MESSAGE" value="add override setvisible" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

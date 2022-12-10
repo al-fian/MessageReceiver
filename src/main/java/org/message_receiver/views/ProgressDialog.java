@@ -40,10 +40,23 @@ public class ProgressDialog extends JDialog {
 
     @Override
     public void setVisible(final boolean visible) {
+
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                getParent().setVisible(visible);
+
+                if (visible == false) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                else {
+                    _progressBar.setValue(0);
+                }
+
+                ProgressDialog.super.setVisible(visible);
             }
         });
     }
