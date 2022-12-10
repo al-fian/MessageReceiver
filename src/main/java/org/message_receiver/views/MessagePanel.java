@@ -29,6 +29,10 @@ public class MessagePanel extends JPanel implements IProgressDialogListener {
     private MessageServer _messageServer;
     private ProgressDialog _progressDialog;
     private SwingWorker<List<Message>, Integer> _worker;
+    private TextPanel _textPanel;
+    private JList _messageList;
+    private JSplitPane _upperPane;
+    private JSplitPane _lowerPane;
 
     public MessagePanel(JFrame parent) {
 
@@ -81,7 +85,19 @@ public class MessagePanel extends JPanel implements IProgressDialogListener {
 
         setLayout(new BorderLayout());
 
-        add(new JScrollPane(_serverTree), BorderLayout.CENTER);
+        _textPanel = new TextPanel();
+        _messageList = new JList();
+
+        _lowerPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, _messageList, _textPanel);
+        _upperPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(_serverTree), _lowerPane);
+
+        _textPanel.setMinimumSize(new Dimension(10,100));
+        _messageList.setMinimumSize(new Dimension(10,100));
+
+        _upperPane.setResizeWeight(0.5);
+        _lowerPane.setResizeWeight(0.5);
+
+        add(_upperPane, BorderLayout.CENTER);
     }
 
     private DefaultMutableTreeNode createTree() {

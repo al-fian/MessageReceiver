@@ -43,7 +43,6 @@ public class MainFrame extends JFrame {
         setLayout(new BorderLayout());
 
         Toolbar _toolbar = new Toolbar();
-        TextPanel _textPanel = new TextPanel();
         _formPanel = new FormPanel();
         _fileChooser = new JFileChooser();
         _controller = new Controller();
