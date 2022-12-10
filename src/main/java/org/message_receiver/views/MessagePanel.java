@@ -5,10 +5,7 @@ import org.message_receiver.models.Message;
 import org.message_receiver.models.Utils;
 
 import javax.swing.*;
-import javax.swing.event.CellEditorListener;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.TreeSelectionEvent;
-import javax.swing.event.TreeSelectionListener;
+import javax.swing.event.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeSelectionModel;
@@ -90,6 +87,15 @@ public class MessagePanel extends JPanel implements IProgressDialogListener {
         _textPanel = new TextPanel();
         _messageList = new JList(_defaultListModel);
         _messageList.setCellRenderer(new MessageListRenderer());
+
+        _messageList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                Message message = (Message) _messageList.getSelectedValue();
+
+                _textPanel.setText(message.getContents());
+            }
+        });
 
         _lowerPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(_messageList), _textPanel);
         _upperPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(_serverTree), _lowerPane);
@@ -186,6 +192,8 @@ public class MessagePanel extends JPanel implements IProgressDialogListener {
                         _defaultListModel.addElement(message);
 
                     }
+
+                    _messageList.setSelectedIndex(0);
 
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
