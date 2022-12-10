@@ -14,6 +14,9 @@ public class ProgressDialog extends JDialog {
         _cancelButton = new JButton("Cancel");
         _progressBar = new JProgressBar();
 
+        _progressBar.setStringPainted(true);
+        _progressBar.setString("Retrieving messages...");
+
         // _progressBar.setIndeterminate(true);
 
         setLayout(new FlowLayout());
