@@ -85,6 +85,13 @@ public class ProgressDialog extends JDialog {
                     _progressBar.setValue(0);
                 }
 
+                if (visible) {
+                    setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                }
+                else {
+                    setCursor(Cursor.getDefaultCursor());
+                }
+
                 ProgressDialog.super.setVisible(visible);
             }
         });
