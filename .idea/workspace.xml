@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="set nested split panes">
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add response to tab selection">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessageListRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -409,11 +409,17 @@
       <option name="project" value="LOCAL" />
       <updated>1670651665416</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="add response to tab selection">
+      <created>1670655982391</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1670655982391</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add update sql statement" />
     <MESSAGE value="add retrieve sql statement" />
     <MESSAGE value="add save and refresh db to mainframe" />
     <MESSAGE value="add window closing to disconnect db" />
@@ -438,7 +444,8 @@
     <MESSAGE value="add canceling worker threads" />
     <MESSAGE value="add set cursor" />
     <MESSAGE value="set nested split panes" />
-    <option name="LAST_COMMIT_MESSAGE" value="set nested split panes" />
+    <MESSAGE value="add response to tab selection" />
+    <option name="LAST_COMMIT_MESSAGE" value="add response to tab selection" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

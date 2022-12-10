@@ -89,6 +89,7 @@ public class MessagePanel extends JPanel implements IProgressDialogListener {
 
         _textPanel = new TextPanel();
         _messageList = new JList(_defaultListModel);
+        _messageList.setCellRenderer(new MessageListRenderer());
 
         _lowerPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(_messageList), _textPanel);
         _upperPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(_serverTree), _lowerPane);
@@ -182,7 +183,7 @@ public class MessagePanel extends JPanel implements IProgressDialogListener {
                     _defaultListModel.removeAllElements();
 
                     for(Message message : _retrievedMessages) {
-                        _defaultListModel.addElement(message.getTitle());
+                        _defaultListModel.addElement(message);
 
                     }
 
