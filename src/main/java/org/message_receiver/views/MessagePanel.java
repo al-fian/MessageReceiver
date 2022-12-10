@@ -33,11 +33,13 @@ public class MessagePanel extends JPanel implements IProgressDialogListener {
     private JList _messageList;
     private JSplitPane _upperPane;
     private JSplitPane _lowerPane;
+    private DefaultListModel _defaultListModel;
 
     public MessagePanel(JFrame parent) {
 
         _messageServer = new MessageServer();
         _progressDialog = new ProgressDialog(parent,"Message Downloading...");
+        _defaultListModel = new DefaultListModel();
 
         _progressDialog.setProgressDialogListener(this);
 
@@ -56,12 +58,12 @@ public class MessagePanel extends JPanel implements IProgressDialogListener {
 
         _serverTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 
+        _messageServer.setSelectedServers(_selectedServers);
+
         _treeCellEditor.addCellEditorListener(new CellEditorListener() {
             @Override
             public void editingStopped(ChangeEvent e) {
                 ServerInfo _serverInfo = (ServerInfo) _treeCellEditor.getCellEditorValue();
-
-                System.out.println(_serverInfo + ": " + _serverInfo.getId() + ": " + _serverInfo.isChecked());
 
                 int _serverId = _serverInfo.getId();
 
@@ -86,9 +88,9 @@ public class MessagePanel extends JPanel implements IProgressDialogListener {
         setLayout(new BorderLayout());
 
         _textPanel = new TextPanel();
-        _messageList = new JList();
+        _messageList = new JList(_defaultListModel);
 
-        _lowerPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, _messageList, _textPanel);
+        _lowerPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(_messageList), _textPanel);
         _upperPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(_serverTree), _lowerPane);
 
         _textPanel.setMinimumSize(new Dimension(10,100));
@@ -176,6 +178,14 @@ public class MessagePanel extends JPanel implements IProgressDialogListener {
 
                 try {
                     List<Message> _retrievedMessages = get();
+
+                    _defaultListModel.removeAllElements();
+
+                    for(Message message : _retrievedMessages) {
+                        _defaultListModel.addElement(message.getTitle());
+
+                    }
+
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 } catch (ExecutionException e) {
@@ -195,6 +205,10 @@ public class MessagePanel extends JPanel implements IProgressDialogListener {
         if (_worker != null) {
             _worker.cancel(true);
         }
+    }
+
+    public void refresh() {
+        retrieveMessages();
     }
 }
 

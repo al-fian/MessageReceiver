@@ -4,6 +4,8 @@ import org.message_receiver.controllers.Controller;
 import org.message_receiver.models.PersonFileFilter;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -106,6 +108,17 @@ public class MainFrame extends JFrame {
 
         _tablePanel.setPersonTableListener(row -> {
             _controller.removePerson(row);
+        });
+
+        _tabbedPane.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                int _tabIndex = _tabbedPane.getSelectedIndex();
+
+                if (_tabIndex == 1) {
+                    _messagePanel.refresh();
+                }
+            }
         });
 
         _preferenceDialog.setPreferenceListener((user, password, port) -> {
