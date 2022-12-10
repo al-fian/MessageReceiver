@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add text on progress bar">
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add percent complete on progress bar">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/IProgressDialogListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/controllers/MessageServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/controllers/MessageServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/ProgressDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/ProgressDialog.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -380,11 +383,17 @@
       <option name="project" value="LOCAL" />
       <updated>1670645431468</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="add percent complete on progress bar">
+      <created>1670645877391</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1670645877391</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add borders to preference dialog" />
     <MESSAGE value="add sqlite jdbc" />
     <MESSAGE value="add db connection" />
     <MESSAGE value="add insert sql statement" />
@@ -409,7 +418,8 @@
     <MESSAGE value="add override setvisible" />
     <MESSAGE value="complete progressbar slide" />
     <MESSAGE value="add text on progress bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="add text on progress bar" />
+    <MESSAGE value="add percent complete on progress bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="add percent complete on progress bar" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

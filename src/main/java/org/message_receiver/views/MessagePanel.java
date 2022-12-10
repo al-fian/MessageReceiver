@@ -19,7 +19,7 @@ import java.util.TreeSet;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class MessagePanel extends JPanel {
+public class MessagePanel extends JPanel implements IProgressDialogListener {
 
     private final JTree _serverTree;
     private final ServerTreeCellRenderer _treeCellRenderer;
@@ -28,11 +28,14 @@ public class MessagePanel extends JPanel {
     private Set<Integer> _selectedServers;
     private MessageServer _messageServer;
     private ProgressDialog _progressDialog;
+    private SwingWorker<List<Message>, Integer> _worker;
 
     public MessagePanel(JFrame parent) {
 
         _messageServer = new MessageServer();
-        _progressDialog = new ProgressDialog(parent);
+        _progressDialog = new ProgressDialog(parent,"Message Downloading...");
+
+        _progressDialog.setProgressDialogListener(this);
 
         _selectedServers = new TreeSet<>();
         _selectedServers.add(1);
@@ -117,7 +120,7 @@ public class MessagePanel extends JPanel {
 
         _progressDialog.setVisible(true);
 
-        SwingWorker<List<Message>, Integer> _worker = new SwingWorker<List<Message>, Integer>() {
+        _worker = new SwingWorker<List<Message>, Integer>() {
             @Override
             protected List<Message> doInBackground() throws Exception {
 
@@ -126,6 +129,9 @@ public class MessagePanel extends JPanel {
                 int count = 0;
 
                 for (Message message : _messageServer) {
+
+                    if (isCancelled()) break;
+
                     System.out.println("Message title: " + message.getTitle());
 
                     _retrievedMessages.add(message);
@@ -148,6 +154,10 @@ public class MessagePanel extends JPanel {
             @Override
             protected void done() {
 
+                _progressDialog.setVisible(false);
+
+                if (isCancelled()) return;
+
                 try {
                     List<Message> _retrievedMessages = get();
                 } catch (InterruptedException e) {
@@ -156,12 +166,19 @@ public class MessagePanel extends JPanel {
                     throw new RuntimeException(e);
                 }
 
-                _progressDialog.setVisible(false);
+
             }
         };
 
         _worker.execute();
 
+    }
+
+    @Override
+    public void progressDialogCancelled() {
+        if (_worker != null) {
+            _worker.cancel(true);
+        }
     }
 }
 

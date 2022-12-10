@@ -2,14 +2,17 @@ package org.message_receiver.views;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class ProgressDialog extends JDialog {
 
     private JButton _cancelButton;
     private JProgressBar _progressBar;
+    private IProgressDialogListener _progressDialogListener;
 
-    public ProgressDialog(Window parent) {
-        super(parent, "Message Downloading...",ModalityType.APPLICATION_MODAL);
+    public ProgressDialog(Window parent, String title) {
+        super(parent, title,ModalityType.APPLICATION_MODAL);
 
         _cancelButton = new JButton("Cancel");
         _progressBar = new JProgressBar();
@@ -28,6 +31,24 @@ public class ProgressDialog extends JDialog {
 
         add(_progressBar);
         add(_cancelButton);
+
+        _cancelButton.addActionListener(e -> {
+            if (_progressDialogListener != null) {
+                _progressDialogListener.progressDialogCancelled();
+            }
+        });
+
+        setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+
+                if (_progressDialogListener != null) {
+                    _progressDialogListener.progressDialogCancelled();
+                }
+            }
+        });
 
         pack();
 
@@ -67,5 +88,9 @@ public class ProgressDialog extends JDialog {
                 ProgressDialog.super.setVisible(visible);
             }
         });
+    }
+
+    public void setProgressDialogListener(IProgressDialogListener progressDialogListener) {
+        _progressDialogListener = progressDialogListener;
     }
 }
