@@ -27,10 +27,12 @@ public class MessagePanel extends JPanel {
 
     private Set<Integer> _selectedServers;
     private MessageServer _messageServer;
+    private ProgressDialog _progressDialog;
 
     public MessagePanel() {
 
         _messageServer = new MessageServer();
+        _progressDialog = new ProgressDialog((Window)getParent());
 
         _selectedServers = new TreeSet<>();
         _selectedServers.add(1);
@@ -113,6 +115,13 @@ public class MessagePanel extends JPanel {
 
         System.out.println("Message waiting: " + _messageServer.getMessageCount());
 
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                _progressDialog.setVisible(true);
+            }
+        });
+
         SwingWorker<List<Message>, Integer> _worker = new SwingWorker<List<Message>, Integer>() {
             @Override
             protected List<Message> doInBackground() throws Exception {
@@ -152,6 +161,8 @@ public class MessagePanel extends JPanel {
                 } catch (ExecutionException e) {
                     throw new RuntimeException(e);
                 }
+
+                _progressDialog.setVisible(false);
             }
         };
 
