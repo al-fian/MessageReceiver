@@ -12,6 +12,8 @@ public class TextPanel extends JPanel {
 
         _textArea.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
 
+        _textArea.setFont(new Font("SansSerif", Font.PLAIN, 20));
+
         setLayout(new BorderLayout());
         add(new JScrollPane(_textArea), BorderLayout.CENTER);
     }

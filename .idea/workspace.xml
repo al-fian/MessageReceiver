@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add custom list renderer">
+    <list default="true" id="2b1f8db4-3221-4d63-8a3f-51a616944ced" name="Changes" comment="add response to list selection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/MessagePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/TextPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/message_receiver/views/TextPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -423,11 +422,17 @@
       <option name="project" value="LOCAL" />
       <updated>1670675105300</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="add response to list selection">
+      <created>1670676006536</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1670676006536</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add save and refresh db to mainframe" />
     <MESSAGE value="add window closing to disconnect db" />
     <MESSAGE value="add icons" />
     <MESSAGE value="add jtoolbar" />
@@ -452,7 +457,8 @@
     <MESSAGE value="set nested split panes" />
     <MESSAGE value="add response to tab selection" />
     <MESSAGE value="add custom list renderer" />
-    <option name="LAST_COMMIT_MESSAGE" value="add custom list renderer" />
+    <MESSAGE value="add response to list selection" />
+    <option name="LAST_COMMIT_MESSAGE" value="add response to list selection" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
