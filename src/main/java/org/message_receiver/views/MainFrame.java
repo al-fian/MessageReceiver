@@ -50,7 +50,7 @@ public class MainFrame extends JFrame {
         _tablePanel = new TablePanel();
         _preferenceDialog = new PreferenceDialog(this);
         _tabbedPane = new JTabbedPane();
-        _messagePanel = new MessagePanel();
+        _messagePanel = new MessagePanel(this);
 
         _splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, _formPanel, _tabbedPane);
         _splitPane.setOneTouchExpandable(true);
